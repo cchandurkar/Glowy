@@ -35,33 +35,35 @@ import android.widget.Toast;
 
 public class GlowingText{
 
-	private Context 	mContext;
-	private Activity 	activity;
+	private Context mContext;
+	private Activity activity;
 	
-	private 			View view;	
+	private View view;	
 	
-	private float		startGlowRadius, 
-						minGlowRadius,
-						maxGlowRadius,
-						currentGlowRadius=startGlowRadius,
-						dx = 0f,
-						dy = 0f;
+	private float startGlowRadius,
+	              minGlowRadius,
+	              maxGlowRadius,
+	              currentGlowRadius=startGlowRadius,
+	              dx = 0f,
+	              dy = 0f;
 
-	private int 		glowColor = 0xFFffffff, glowSpeed;    		//ffffff defines hexadecimal value of color
-	private boolean 	isDirectionUp = true;  						// Whether radius should increase or Decrease.
+	private int glowColor = 0xFFffffff,    //ffffff defines hexadecimal value of color
+			    glowSpeed;  
 	
-	private 			Handler handler;
-	private 			Runnable r;
+	private boolean isDirectionUp = true;  // Whether radius should increase or Decrease.
+	
+	private Handler handler;
+	private Runnable r;
 		
 	public GlowingText(Activity mActivity,Context context,View v, float minRadius, float maxRadius, float startRadius, int color,int speed) {
-		this.activity 			=mActivity;
-		this.mContext 			= context;
-		this.view 				= v;
-		this.minGlowRadius 		= minRadius;
-		this.maxGlowRadius		= maxRadius;
-		this.startGlowRadius 	= startRadius;
-		this.glowColor 			= color;
-		this.glowSpeed 			= speed;
+		this.activity           =mActivity;
+		this.mContext           = context;
+		this.view               = v;
+		this.minGlowRadius      = minRadius;
+		this.maxGlowRadius      = maxRadius;
+		this.startGlowRadius    = startRadius;
+		this.glowColor          = color;
+		this.glowSpeed          = speed;
 	
 		
 		if(!(view instanceof TextView) && !(view instanceof Button)){
@@ -83,43 +85,42 @@ public class GlowingText{
 	         r =new Runnable(){
 				public void run() {
 					
-					// Check Which View Is this
-					if(view instanceof TextView){
-						((TextView) view).setShadowLayer(currentGlowRadius, dx, dy,glowColor);
-					}else if (view instanceof Button){
-						((Button) view).setShadowLayer(currentGlowRadius, dx, dy,glowColor);
-					}
-					 
-					/*	currentGlowRadius - 	Glow radius.
-					 *  dx - 					Spread of Shadow in X direction
-					 *  dy - 					Spread of Shadow in Y direction
-					 *  color - 				Color used to create Glow (White in our case )
-					 */
-					
-					if(isDirectionUp){
-						/*	Increase Glow Radius by 1 */
-						if(currentGlowRadius<maxGlowRadius){
-							/*	Maximun has not reached. Carry On */
-							currentGlowRadius++;
-						}else{
-							/*	Oops !! Max is reached. Stars decreasing glow radius now.
-							 *  Change the Direction to Down.
-						     */
-							isDirectionUp = false;
-						}
+				// Check Which View Is this
+				if(view instanceof TextView){
+					((TextView) view).setShadowLayer(currentGlowRadius, dx, dy,glowColor);
+				}else if (view instanceof Button){
+					((Button) view).setShadowLayer(currentGlowRadius, dx, dy,glowColor);
+				}
+				 
+				/*	currentGlowRadius - 	Glow radius.
+				 *  dx - 					Spread of Shadow in X direction
+				 *  dy - 					Spread of Shadow in Y direction
+				 *  color - 				Color used to create Glow (White in our case )
+				 */
+				
+				if(isDirectionUp){
+					/*	Increase Glow Radius by 1 */
+					if(currentGlowRadius<maxGlowRadius){
+						/*	Maximun has not reached. Carry On */
+						currentGlowRadius++;
 					}else{
-						/*	Decrease Glow Radius by 1 */
-						if(currentGlowRadius>minGlowRadius){
-							/*	Minimum has not reached yet. Keep Decreasing */
-							currentGlowRadius--;
-						}else{
-							/*	Oops !! Min is reached. Stars Increasing glow radius again.
-							 *	Change the Direction to UP
-						     */
-							isDirectionUp = true;
-						}
+						/*	Oops !! Max is reached. Stars decreasing glow radius now.
+						 *  Change the Direction to Down.
+					     */
+						isDirectionUp = false;
 					}
-					
+				}else{
+					/*	Decrease Glow Radius by 1 */
+					if(currentGlowRadius>minGlowRadius){
+						/*	Minimum has not reached yet. Keep Decreasing */
+						currentGlowRadius--;
+					}else{
+						/*	Oops !! Min is reached. Stars Increasing glow radius again.
+						 *	Change the Direction to UP
+					     */
+						isDirectionUp = true;
+					}
+				}
 					// Keep Looping
 					handler.postDelayed(this, glowSpeed);	
 				}
