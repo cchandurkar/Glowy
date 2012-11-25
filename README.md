@@ -7,7 +7,7 @@ Using this API you can make your <b>TextView</b> and <b>Button</b> text Glow wit
 
 ##Usage
 
-### Step 1 : Initialize Attributes 
+### Step 1 : Initialize Variables 
 
 <pre><code>
 // TextView which is to be glow
