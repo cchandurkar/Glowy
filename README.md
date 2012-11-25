@@ -37,9 +37,9 @@ glowText = new GlowingText(
 		1);                 // Glowing Transition Speed (Range of 1 to 10)  (fast ... slow)
 </code>
 </pre>
-And it sharts glowing .. :D
+<b> And it starts Glowing ...  </b>
 
-### Inbuilt Methods
+### Inbuilt Methods You Can Use
 <pre><code>
  // You can use these methods to change glowing attribute dynamically.
  glowText.setGlowColor(Color.WHITE);  //(int : 0xFFffffff)
