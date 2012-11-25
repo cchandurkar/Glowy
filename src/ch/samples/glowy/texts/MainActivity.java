@@ -60,7 +60,8 @@ public class MainActivity extends Activity {
         button.setTextSize(25);
         
         // Start Glowing :D
-        glowText = new GlowingText(activity,          // Pass activity Object
+        glowText = new GlowingText(
+        		activity,           // Pass activity Object
         		getBaseContext(),   // Context
         		textView,           // TextView
         		minGlowRadius,      // Minimum Glow Radius
@@ -70,7 +71,8 @@ public class MainActivity extends Activity {
         		1);                 // Glowing Transition Speed (Range of 1 to 10)
         
         
-        glowButton = new GlowingText(activity,              // Pass activity Object
+        glowButton = new GlowingText(
+        		activity,               // Pass activity Object
         		getBaseContext(),       // Context
         		button,                 // Button View
         		minGlowRadius,          // Minimum Glow Radius
