@@ -5,7 +5,7 @@ Using this API you can make your <b>TextView</b> and <b>Button</b> text Glow wit
 </p>
 
 
-##Using
+##Usage
 
 ### Step 1 : Initialize Attributes 
 
@@ -39,12 +39,13 @@ glowText = new GlowingText(
 </pre>
 And it sharts glowing .. :D
 
-### Step 2 : Methods
+### Inbuilt Methods
 <pre><code>
  // You can use these methods to change glowing attribute dynamically.
  glowText.setGlowColor(Color.WHITE);  //(int : 0xFFffffff)
  glowText.setStartGlowRadius(10f);
  glowText.setMinGlowRadius(2f);
+ glowText.setTransitionSpeed(1);
 
  // You can use following methods to retrieve current data
  Log.d(TAG,"Current Glow Radius: "    +glowText.getCurrentGlowRadius());
