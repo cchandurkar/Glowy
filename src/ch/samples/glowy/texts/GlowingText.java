@@ -35,18 +35,20 @@ import android.widget.Toast;
 
 public class GlowingText{
 
+	Context mContext;
+	Activity activity;
+	
 	private View view;	
+	
 	private float	startGlowRadius =5f, 
 			minGlowRadius = 3f,
 			maxGlowRadius = 10f,
 			currentGlowRadius=startGlowRadius,
 			dx = 0f,
 			dy = 0f;
-	Context mContext;
-	Activity activity;
-	
+
 	private int glowColor = 0xFFffffff, glowSpeed;    			//ffffff defines hexadecimal value of color
-	private boolean isDirectionUp = true;  		// Whether radius should increase or Decrease.
+	private boolean isDirectionUp = true;  						// Whether radius should increase or Decrease.
 	
 	private Handler handler;
 	private Runnable r;

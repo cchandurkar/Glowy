@@ -31,65 +31,77 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-	// Create an Instance of GlowingText class;
-	GlowingText glow;
-	MainActivity activity =this;
 	private static final String TAG ="Glowing Text Example";
 	
-	TextView view;
-	Button glowButton;
+	TextView textView;
+	Button button;
+	
 	float	startGlowRadius 	= 25f, 
 			minGlowRadius 		= 3f,
 			maxGlowRadius 		= 15f;
-		
+			
+	// Create an Instance of GlowingText class;
+	GlowingText glowText,glowButton;
+	
+	// Create instance of Activity
+	MainActivity activity =this;
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        view = (TextView) findViewById(R.id.glowingtext);
-        glowButton = (Button) findViewById(R.id.glowButton);
+        // Instantiate Views
+        textView 	= (TextView) findViewById(R.id.glowingtext);
+        button 		= (Button) findViewById(R.id.glowButton);
         
-        view.setTextSize(30);
-        glowButton.setTextSize(25);
+        // Set Text Size
+        textView.setTextSize(30);
+        button.setTextSize(25);
         
-        glow = new GlowingText(
-        					activity,
-        					getBaseContext(), 	// Context
-        					view, 					// View (TextView or Button ONLY)
+        // Start Glowing :D
+        glowText = new GlowingText(
+        					activity,				// Pass activity Object
+        					getBaseContext(), 		// Context
+        					textView, 				// TextView
 			        		minGlowRadius,   		// Minimum Glow Radius
 			        		maxGlowRadius, 			// Maximum Glow Radius
 			        		startGlowRadius,		// Start Glow Radius - Increases to MaxGlowRadius then decreases to MinGlowRadius.
-			        		Color.WHITE,			// Glow Color (int : 0xFFffffff)
+			        		Color.BLUE,				// Glow Color (int)
 			        		1); 					// Glowing Transition Speed (Range of 1 to 10)
         
-       
-      
-        glow.setGlowColor(Color.BLUE);
         
-        /*
+        glowButton = new GlowingText(
+							activity,				// Pass activity Object
+							getBaseContext(), 		// Context
+							button, 				// Button View
+			        		minGlowRadius,   		// Minimum Glow Radius
+			        		maxGlowRadius, 			// Maximum Glow Radius
+			        		startGlowRadius,		// Start Glow Radius - Increases to MaxGlowRadius then decreases to MinGlowRadius.
+			        		Color.RED,				// Glow Color (int)
+			        		3); 					// Glowing Transition Speed (Range of 1 to 10)
+
         // You can also use to set data dynamically
-        glow.setStartGlowRadius(5f);
-        glow.setMaxGlowRadius(15f);
-        glow.setMinGlowRadius(3f);
+        glowText.setGlowColor(Color.WHITE);  //(int : 0xFFffffff)
+        glowText.setStartGlowRadius(5f);
+        glowText.setMaxGlowRadius(15f);
+        glowText.setMinGlowRadius(3f);
         
         // You can use following methods to retrieve current data
-        Log.d(TAG,"Current Glow Radius: "	+glow.getCurrentGlowRadius());
-        Log.d(TAG,"Max Glow Radius: "		+glow.getMaxGlowRadius());
-        Log.d(TAG,"Min Glow Radius: "		+glow.getMinGlowRadius());
-        Log.d(TAG,"Glow Color: "			+glow.getGlowColor());
-        Log.d(TAG,"Glow Transition Speed: "	+glow.getTransitionSpeed());
-        */
-        
-      
-        
+        Log.d(TAG,"Current Glow Radius: "	+glowText.getCurrentGlowRadius());
+        Log.d(TAG,"Max Glow Radius: "		+glowText.getMaxGlowRadius());
+        Log.d(TAG,"Min Glow Radius: "		+glowText.getMinGlowRadius());
+        Log.d(TAG,"Glow Color: "			+glowText.getGlowColor());
+        Log.d(TAG,"Glow Transition Speed: "	+glowText.getTransitionSpeed());
+  
     }
 
     @Override
     public void onDestroy(){
     	super.onDestroy();
     	// Don't forget to use this.
-    	glow.stopGlowing();
+    	glowText.stopGlowing();
+    	glowButton.stopGlowing();
     }
    
 }
