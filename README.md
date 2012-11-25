@@ -8,3 +8,4 @@ Using this API you can make your <b>TextView</b> and <b>Button</b> text Glow wit
 
 ###<p><b>How to use:</b></p>
 <u><i>Step 1:</i></u>
+* Create an Instance of <b><i>GlowingText</i></b> class.
