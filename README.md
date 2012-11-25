@@ -1,0 +1,1 @@
+* GLowing Text Animation API
