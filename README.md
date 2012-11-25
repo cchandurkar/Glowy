@@ -9,7 +9,10 @@ Using this API you can make your <b>TextView</b> and <b>Button</b> text Glow wit
 
 ### Step 1 : Initialize Variables 
 
-<pre><code>
+
+
+
+`````java
 // TextView which is to be glow
 TextView textView;
 
@@ -22,10 +25,9 @@ float       startGlowRadius = 6f,         // Glowing starts with this Intensity
 
 // Create instance of GlowingText
 GlowingText glowText;
-</code>
-</pre>
+`````
 ### Step 2 : Instantiate GlowingText class
-<pre><code>
+`````java
 glowText = new GlowingText(
 		activity,           // Pass activity Object
 		getBaseContext(),   // Context
@@ -35,12 +37,11 @@ glowText = new GlowingText(
 		startGlowRadius,    // Start Glow Radius - Increases to MaxGlowRadius then decreases to MinGlowRadius.
 		Color.BLUE,         // Glow Color (int)
 		1);                 // Glowing Transition Speed (Range of 1 to 10)  (fast ... slow)
-</code>
-</pre>
+`````
 <b> And it starts Glowing ...  </b>
 
 ### Inbuilt Methods You Can Use
-<pre><code>
+`````java
  // You can use these methods to change glowing attribute dynamically.
  glowText.setGlowColor(Color.WHITE);  //(int : 0xFFffffff)
  glowText.setStartGlowRadius(10f);
@@ -53,5 +54,4 @@ glowText = new GlowingText(
  Log.d(TAG,"Min Glow Radius: "        +glowText.getMinGlowRadius());
  Log.d(TAG,"Glow Color: "             +glowText.getGlowColor());
  Log.d(TAG,"Glow Transition Speed: "  +glowText.getTransitionSpeed());
-</code>
-</pre>
+`````
