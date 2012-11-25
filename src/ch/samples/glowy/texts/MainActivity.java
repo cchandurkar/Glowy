@@ -36,9 +36,9 @@ public class MainActivity extends Activity {
 	TextView textView;
 	Button button;
 	
-	float   startGlowRadius     = 25f,
-			minGlowRadius       = 3f,
-			maxGlowRadius       = 15f;
+	float   startGlowRadius = 25f,
+			minGlowRadius   = 3f,
+			maxGlowRadius   = 15f;
 			
 	// Create an Instance of GlowingText class;
 	GlowingText glowText,glowButton;
