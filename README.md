@@ -19,7 +19,7 @@ TextView textView;
 // Create instance of Activity
 MainActivity activity = this;
 
-float       startGlowRadius = 6f,         // Glowing starts with this Intensity
+float       startGlowRadius = 6f,       // Glowing starts with this Intensity
 			minGlowRadius   = 3f,         // Minimum Glowing Intensity
 			maxGlowRadius   = 15f;        // Maximum Glowing Intensity
 
