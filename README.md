@@ -4,6 +4,6 @@
 Using this API you can make your <b>TextView</b> and <b>Button</b> text Glow with color of your choice.
 </p>
 
-<ht />
+<hr />
 
 <p><b>How to use:</b></p>
