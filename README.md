@@ -19,7 +19,7 @@ TextView textView;
 // Create instance of Activity
 MainActivity activity = this;
 
-float       startGlowRadius = 6f,       // Glowing starts with this Intensity
+float       startGlowRadius = 6f,         // Glowing starts with this Intensity
 			minGlowRadius   = 3f,         // Minimum Glowing Intensity
 			maxGlowRadius   = 15f;        // Maximum Glowing Intensity
 
@@ -27,6 +27,8 @@ float       startGlowRadius = 6f,       // Glowing starts with this Intensity
 GlowingText glowText;
 `````
 ### Step 2 : Instantiate GlowingText class
+* Obviously you must do it inside OnCreate 
+
 `````java
 glowText = new GlowingText(
 		activity,           // Pass activity Object
@@ -38,12 +40,25 @@ glowText = new GlowingText(
 		Color.BLUE,         // Glow Color (int)
 		1);                 // Glowing Transition Speed (Range of 1 to 10)  (fast ... slow)
 `````
-<b> And it starts Glowing ...  </b>
+<i> And it starts Glowing ...  </i>
+
+### Step 3 : Don't Forget
+* method <b>stopGlowing()</b> should be called for each and every instance of <i>GlowingText</i> class.
+
+`````java
+@Override
+public void onDestroy(){
+    super.onDestroy();
+    // Don't forget to use this.
+    glowText.stopGlowing();
+}
+`````
+
 
 ### Inbuilt Methods You Can Use
 `````java
  // You can use these methods to change glowing attribute dynamically.
- glowText.setGlowColor(Color.WHITE);  //(int : 0xFFffffff)
+ glowText.setGlowColor(Color.WHITE); 
  glowText.setStartGlowRadius(10f);
  glowText.setMinGlowRadius(2f);
  glowText.setTransitionSpeed(1);
