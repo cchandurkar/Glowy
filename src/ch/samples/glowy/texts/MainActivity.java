@@ -31,14 +31,14 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-	private static final String TAG ="Glowing Text Example";
+	private static final String TAG = "Glowing Text Example";
 	
 	TextView textView;
 	Button button;
 	
-	float   startGlowRadius 	= 25f,
-			minGlowRadius 		= 3f,
-			maxGlowRadius 		= 15f;
+	float   startGlowRadius     = 25f,
+			minGlowRadius       = 3f,
+			maxGlowRadius       = 15f;
 			
 	// Create an Instance of GlowingText class;
 	GlowingText glowText,glowButton;
@@ -52,15 +52,15 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         
         // Instantiate Views
-        textView 	= (TextView) findViewById(R.id.glowingtext);
-        button 		= (Button) findViewById(R.id.glowButton);
+        textView  = (TextView) findViewById(R.id.glowingtext);
+        button    = (Button) findViewById(R.id.glowButton);
         
         // Set Text Size
         textView.setTextSize(30);
         button.setTextSize(25);
         
         // Start Glowing :D
-        glowText = new GlowingText(activity,           // Pass activity Object
+        glowText = new GlowingText(	activity,           // Pass activity Object
         		                   getBaseContext(),   // Context
         		                   textView,           // TextView
         		                   minGlowRadius,      // Minimum Glow Radius
@@ -70,7 +70,7 @@ public class MainActivity extends Activity {
         		                   1);                 // Glowing Transition Speed (Range of 1 to 10)
         
         
-        glowButton = new GlowingText(activity, 
+        glowButton = new GlowingText(	activity, 
         		                     getBaseContext(),       // Context
         		                     button,                 // Button View
         		                     minGlowRadius,          // Minimum Glow Radius

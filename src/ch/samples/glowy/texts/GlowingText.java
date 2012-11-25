@@ -74,8 +74,11 @@ public class GlowingText{
 				Random r = new Random();
 				int start = r.nextInt((int)maxGlowRadius - (int)minGlowRadius + 1) + (int)minGlowRadius;
 				startGlowRadius = start;
-			}
+		    }
+			
+			// Scale Up Glowing Transition as milliseconds
 			glowSpeed*=25;
+			
 			startGlowing();	
 		}
 	}
