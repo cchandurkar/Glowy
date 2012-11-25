@@ -1,1 +1,1 @@
-* GLowing Text Animation API
+# GLowing Text Animation API
