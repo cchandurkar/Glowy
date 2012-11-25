@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
 	TextView textView;
 	Button button;
 	
-	float   startGlowRadius = 25f,
+	float startGlowRadius = 25f,
 			minGlowRadius   = 3f,
 			maxGlowRadius   = 15f;
 			
