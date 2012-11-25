@@ -6,5 +6,5 @@ Using this API you can make your <b>TextView</b> and <b>Button</b> text Glow wit
 
 <hr />
 
-<p><b><h2 style="color:gray">How to use:</h2></b></p>
+##<p><b>How to use:</b></p>
 <u><i>Step 1:</i></u>
