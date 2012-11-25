@@ -92,10 +92,10 @@ public class GlowingText{
 					((Button) view).setShadowLayer(currentGlowRadius, dx, dy,glowColor);
 				}
 				 
-				/*	currentGlowRadius -     Glow radius.
-				 *  dx -                    Spread of Shadow in X direction
-				 *  dy -                    Spread of Shadow in Y direction
-				 *  color -                 Color used to create Glow (White in our case )
+				/* currentGlowRadius  -     Glow radius.
+				 * dx                 -     Spread of Shadow in X direction
+				 * dy                 -     Spread of Shadow in Y direction
+				 * color              -     Color used to create Glow (White in our case )
 				 */
 				
 				if(isDirectionUp){
@@ -115,7 +115,7 @@ public class GlowingText{
 						currentGlowRadius--;
 					}else{
 						/* Oops !! Min is reached. Stars Increasing glow radius again.
-						 *	Change the Direction to UP */
+						 * Change the Direction to UP */
 						isDirectionUp = true;
 					}
 				}
