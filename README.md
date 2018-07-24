@@ -1,3 +1,6 @@
+#### [OUTDATED]
+Though this api is pretty basic and probaly would just work out of the box, this is no longer under development or maintained.
+
 # Glowing Text Animation API
 
 <p>This is an API for Android Programmers.<br /> 
@@ -5,7 +8,7 @@ Using this API you can make your <b>TextView</b> and <b>Button</b> text Glow wit
 </p>
 
 
-##Usage
+## Usage
 
 ### Step 1 : Initialize Variables 
 
