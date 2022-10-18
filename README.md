@@ -1,4 +1,4 @@
-#### [OUTDATED]
+# [Unmaintained]
 Though this api is pretty basic and probaly would just work out of the box, this is no longer under development or maintained.
 
 # Glowing Text Animation API
